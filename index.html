@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Neurofic Awards voting is here! Vote for your favorite fic in each category!">
+    <link rel="stylesheet" href="style.css">
+    <title>Neurofic Awards</title>
+    <link rel="icon" type="image/png" href="img/NOTED.png"/>
+</head>
+
+<body>
+    <div id="title">The Neurofic Awards</div>
+    <div id="preamble">
+        <p>The Neuroverse Fanfic Awards (2024) have arrived! A few stories have been nominated for each category's award, having shown themselves exceptional in the eyes of the public. You're welcome to vote for each of the nominees you think is most deserving to win each award!</p>
+        <p>To vote, click on the box with the story of your choice, or click skip to abstain.</p>
+        <p>There's also links to the story's ao3 page next to their name, so if you see something you haven't read yet, please consider checking it out!</p>
+        <p>Voting is open Dec. 1st-Dec. 31st.</p>
+        <a style="font-size: 15px;" href="https://docs.google.com/spreadsheets/d/1UjAxZ7MSKG-VQtRlLdPmor9sNESUn-VEukd3IA7Uf5I/edit?gid=0#gid=0">(Here are bar graphs showing the full data from the nominee selection process, for those interested)</a>
+    </div>
+    <form id="awardForm" class="gform" method="POST"
+    action="https://script.google.com/macros/s/AKfycbz8L0Vr0YLGPal5_4k-4AR4oPB2pFWGUBcjAmmNnqoLpFmZedBO28vokQMJJTHJapsD/exec">
+        <input id="honeypot" type="text" name="honeypot" value="" />
+        <div class="catLabel">Discord Username</div>
+        <p>This is to prevent duplicate entries. Don't skip! It's mandatory!</p>
+        <input id="usernameInput" name="Username" placeholder="Username here"/>
+    </form>
+    <script src="main.js"></script>
+    <script src="form-submission-handler.js"></script>
+</body>
+</html>
