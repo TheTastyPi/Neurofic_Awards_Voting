@@ -75,7 +75,7 @@
       xhr.onreadystatechange = function() {
           if (xhr.readyState === 4 && xhr.status === 200) {
             sendBtn.disabled = false;
-            sendBtn.textContent = "Sent! THX!";
+            sendBtn.textContent = "Resend";
           }
       };
       // url encode form data for sending as post data
