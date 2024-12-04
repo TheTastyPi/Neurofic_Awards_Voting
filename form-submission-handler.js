@@ -75,12 +75,9 @@
       xhr.onreadystatechange = function() {
           if (xhr.readyState === 4 && xhr.status === 200) {
             sendBtn.disabled = false;
-            sendBtn.textContent = "Successfully Sent!";
+            sendBtn.textContent = "Successfully sent!";
             let resendMsg = document.getElementById("resendMsg");
             resendMsg.style.display = "";
-          } else if (xhr.status === 0) {
-            sendBtn.disabled = false;
-            sendBtn.textContent = "Error! Please try again!";
           }
       };
       // url encode form data for sending as post data
