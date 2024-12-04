@@ -155,6 +155,12 @@ function createForm() {
     let lineBreak = document.createElement("br");
     form.appendChild(lineBreak);
 
+    let resendMsg = document.createElement("p");
+    form.appendChild(resendMsg);
+    resendMsg.textContent = "If you wish to edit your response, just change your votes, then press this button again to resubmit!";
+    resendMsg.style.display = "none";
+    resendMsg.id = "resendMsg";
+
     let sendBtn = document.createElement("button");
     sendBtn.id = "sendBtn";
     sendBtn.textContent = "Send";
