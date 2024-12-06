@@ -75,23 +75,29 @@ const nominees = {
     ]
 }
 const form = document.getElementById("awardForm");
-var catElems = {};
+var optElems = {};
+var votes = {username: ""};
 
 function uncheckAll(cat) {
-    for (let i = 1; i < catElems[cat].children.length; i++) {
-        catElems[cat].children[i].classList.remove("checked");
+    for (let i in optElems[cat]) {
+        optElems[cat][i].classList.remove("checked");
     }
 }
 
-function checkOption(cat, cont, input) {
-    input.checked = "checked";
+function checkOption(cat, name) {
+    uncheckAll(cat);
+    let cont = optElems[cat][name];
+    cont.children[0].checked = "checked";
     cont.classList.add("checked");
+    votes[cat] = name;
+    saveVotes();
 }
 
 function addOption(catCont, cat, name, link) {
     let optCont = document.createElement("div");
     optCont.classList.add("option");
     catCont.appendChild(optCont);
+    optElems[cat][name] = optCont;
 
     let optInput = document.createElement("input");
     optInput.classList.add("optInput");
@@ -123,8 +129,7 @@ function addOption(catCont, cat, name, link) {
     optCont.addEventListener("click", function(e){
         if (link && e.target == optLink) return;
         if (e.button == 0) {
-            uncheckAll(cat);
-            checkOption(cat, optCont, optInput);
+            checkOption(cat, name);
         }
     })
 
@@ -139,7 +144,8 @@ function addCategory(cat) {
     catLabel.classList.add("catLabel");
     catLabel.textContent = cat;
     catCont.appendChild(catLabel);
-    catElems[cat] = catCont;
+    optElems[cat] = {};
+    votes[cat] = "Skip";
     for (let i in nominees[cat]) {
         let [name, link] = nominees[cat][i];
         addOption(catCont, cat, name, link, parseInt(i)+1);
@@ -149,6 +155,11 @@ function addCategory(cat) {
 }
 
 function createForm() {
+    document.getElementById("usernameInput").addEventListener("input", function(){
+        votes.username = this.value;
+        saveVotes();
+    });
+
     for (let i in nominees) {
         addCategory(i);
     }
@@ -167,4 +178,23 @@ function createForm() {
     form.appendChild(sendBtn);
 }
 
+function saveVotes() {
+    let str = JSON.stringify(votes);
+    localStorage.setItem("Neurofic_Awards_Votes", str);
+}
+
+function loadVotes() {
+    let str = localStorage.getItem("Neurofic_Awards_Votes");
+    if (str) {
+        votes = JSON.parse(str);
+        document.getElementById("usernameInput").value = votes.username;
+        for (let i in votes) {
+            if (i == "username") continue;
+            let name = votes[i];
+            checkOption(i, name);
+        }
+    }
+}
+
 createForm();
+loadVotes();
