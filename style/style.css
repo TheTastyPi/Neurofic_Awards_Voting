@@ -8,6 +8,45 @@ body {
     background-color: pink;
 }
 
+#topbar {
+    height: 35px;
+}
+
+.dropdown {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.dropdownLabel {
+    background-color: rgb(233, 154, 166);
+    color: black;
+    width: 125px;
+    height: 35px;
+    border: none;
+    font-size: 20px;
+}
+
+.dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 125px;
+}
+
+.dropdownContent a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    height: 20px;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.dropdownContent a:hover {background-color: lightgray;}
+
+.dropdown.active .dropdownLabel {background-color: rgb(215, 142, 153);}
+
 #title {
     text-align: center;
     font-size: 50px;
@@ -83,8 +122,25 @@ body {
 
 @font-face {
     font-family: "First Coffee";
-    src: url("font/First Coffee.otf") format("otf"),
-        url("font/First Coffee.ttf") format("truetype");
+    src: url("../font/First Coffee.otf") format("otf"),
+        url("../font/First Coffee.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
+}
+
+#nwero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation: rotating 5s linear infinite;
+}
+
+@keyframes rotating {
+    from {
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
 }
