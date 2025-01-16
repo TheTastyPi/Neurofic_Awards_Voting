@@ -20,7 +20,7 @@ const nominees = {
         ["Broken Code", "https://archiveofourown.org/works/55465057"]
     ],
     "Best Angst": [
-        ["A Programmer's Fifteen Daughters", "https://archiveofourown.org/works/58720972"],
+        ["A Programmers Fifteen Daughters", "https://archiveofourown.org/works/58720972"],
         ["Connection Lost", "https://archiveofourown.org/works/57870754"],
         ["You Don't Need Me Anymore, Neuro", "https://archiveofourown.org/works/52770286"],
         ["Broken Code", "https://archiveofourown.org/works/55465057"],

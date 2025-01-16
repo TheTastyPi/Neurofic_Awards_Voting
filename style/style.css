@@ -52,6 +52,10 @@ body {
     font-size: 50px;
 }
 
+#preamble {
+    background-color: rgba(255,255,255,0.5);
+}
+
 #preamble>p {
     font-size: 20px;
     max-width: 75vw;
