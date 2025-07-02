@@ -20,21 +20,28 @@
     </div>
     <div id="title">The Neurofic Awards</div>
     <div id="preamble">
-        <p>The Neuroverse Fanfic Awards (2024) have arrived! A few stories have been nominated for each category's award, having shown themselves exceptional in the eyes of the public. You're welcome to vote for each of the nominees you think is most deserving to win each award!</p>
+        <p>The Neuroverse Fanfic Awards 2025 have arrived! A few stories have been nominated for each category's award, having shown themselves exceptional in the eyes of the public. You're welcome to vote for each of the nominees you think is most deserving to win each award!</p>
         <p>To vote, click on the box with the story of your choice, or click skip to abstain.</p>
         <p>There's also links to the story's ao3 page next to their name, so if you see something you haven't read yet, please consider checking it out!</p>
         <p>Voting is open Dec. 1st-Dec. 31st.</p>
         <a style="font-size: 15px;" target="_blank" href="https://docs.google.com/spreadsheets/d/1UjAxZ7MSKG-VQtRlLdPmor9sNESUn-VEukd3IA7Uf5I/edit?gid=0#gid=0">(Here are bar graphs showing the full data from the nominee selection process, for those interested)</a>
+        <div id="discordAuthSect">
+            <br><br>
+            <div id="discordAuthErrorMsg">
+                Oops... It seems like something went wrong. Please try again.
+            </div>
+            <a href="https://discord.com/oauth2/authorize?client_id=1389365966667780198&response_type=code&redirect_uri=https%3A%2F%2Fthetastypi.github.io%2FNeurofic_Awards_Voting%2Fvoting%2F&scope=identify"><button id="discordBtn">Continue with Discord</button></a>
+        </div>
     </div>
-    <form id="awardForm" class="gform" method="POST"
-    action="PLACEHOLDER">
+    <form id="awardForm" class="gform" method="POST">
         <input id="honeypot" type="text" name="honeypot" value="" />
-        <div class="catLabel">Discord Username</div>
-        <p>This is to prevent duplicate entries. Don't skip! It's mandatory! <br> (Note that you can submit again with the same name to edit your votes.)</p>
-        <input id="usernameInput" name="Username" placeholder="Username here"/>
+        <div id="loading">
+            <br><br>
+            Loading...
+        </div>
     </form>
-    <script src="../nominees/2024.js"></script>
-    <script src="main.js"></script>
+    <script src="nominees.js"></script>
     <script src="form-submission-handler.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

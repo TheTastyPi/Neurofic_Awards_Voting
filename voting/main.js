@@ -1,6 +1,8 @@
 const form = document.getElementById("awardForm");
+const code = (new URLSearchParams(window.location.search)).get('code');
+var token = null;
 var optElems = {};
-var votes = {username: ""};
+var votes = {};
 
 function uncheckAll(cat) {
     for (let i in optElems[cat]) {
@@ -79,11 +81,6 @@ function addCategory(cat) {
 }
 
 function createForm() {
-    document.getElementById("usernameInput").addEventListener("input", function(){
-        votes.username = this.value;
-        saveVotes();
-    });
-
     for (let i in nominees) {
         addCategory(i);
     }
@@ -92,7 +89,7 @@ function createForm() {
 
     let resendMsg = document.createElement("p");
     form.appendChild(resendMsg);
-    resendMsg.textContent = "If you wish to edit your response, just change your votes, then press this button again to resubmit!";
+    resendMsg.textContent = "If you wish to edit your response, just change your votes, then press this button again!";
     resendMsg.style.display = "none";
     resendMsg.id = "resendMsg";
 
@@ -103,6 +100,7 @@ function createForm() {
 }
 
 function saveVotes() {
+    votes.year = '2025';
     let str = JSON.stringify(votes);
     localStorage.setItem("Neurofic_Awards_Votes", str);
 }
@@ -111,7 +109,8 @@ function loadVotes() {
     let str = localStorage.getItem("Neurofic_Awards_Votes");
     if (str) {
         votes = JSON.parse(str);
-        document.getElementById("usernameInput").value = votes.username;
+        if (votes.year != '2025') return;
+        delete votes.year;
         for (let i in votes) {
             if (i == "username") continue;
             let name = votes[i];
@@ -120,5 +119,74 @@ function loadVotes() {
     }
 }
 
-createForm();
-loadVotes();
+function saveToken() {
+    let str = JSON.stringify(token);
+    localStorage.setItem("Neurofic_Awards_Discord_Token", str);
+}
+
+function loadToken() {
+    let str = localStorage.getItem("Neurofic_Awards_Discord_Token");
+    if (str) token = JSON.parse(str);
+}
+
+async function getToken() {
+    let response = await fetch(url, {
+        method: "POST",
+        headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: urlEncode({code:code})
+    });
+    response = await response.json();
+    if (response.result === "error") return false;
+    token = JSON.parse(response.token);
+    token.created_on = Math.floor(Date.now() / 1000);
+    saveToken();
+    return true;
+}
+
+async function refreshToken() {
+    let response = await fetch(url, {
+        method: "POST",
+        headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: urlEncode({refresh_token:token.refresh_token})
+    });
+    response = await response.json();
+    if (response.result === "error") return false;
+    token = JSON.parse(response.token);
+    token.created_on = Math.floor(Date.now() / 1000);
+    saveToken();
+    return true;
+}
+
+async function init() {
+    loadToken();
+    if (token !== null || code !== null) {
+        document.getElementById("loading").style.display = "block";
+        document.getElementById("discordAuthSect").style.display = "none";
+        if (token === null) {
+            let status = await getToken();
+            if (!status) {
+                document.getElementById("discordAuthSect").style.display = "";
+                document.getElementById("discordAuthErrorMsg").style.display = "block";
+                document.getElementById("loading").style.display = "";
+                return;
+            }
+        } else if (Math.ceil(Date.now()/1000)-token.created_on > token.expires_in*6/7) {
+            let status = await refreshToken();
+            if (!status) {
+                document.getElementById("discordAuthSect").style.display = "";
+                document.getElementById("discordAuthErrorMsg").style.display = "block";
+                document.getElementById("loading").style.display = "";
+                return;
+            }
+        }
+        document.getElementById("loading").style.display = "";
+        createForm();
+        loadVotes();
+    }
+}
+
+init();
