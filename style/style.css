@@ -94,6 +94,14 @@ body {
     margin-top: 20px;
 }
 
+.catDesc {
+    font-size: 20px;
+}
+
+.catInput {
+    font-size: 20px;
+}
+
 .option {
     border: 2px black solid;
     border-radius: 10px;

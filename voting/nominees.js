@@ -73,4 +73,4 @@ const nominees = {
         ["Connection Lost", "https://archiveofourown.org/works/57870754"],
         ["Artificial Heroes", "https://archiveofourown.org/works/56135356"]
     ]
-}
+};

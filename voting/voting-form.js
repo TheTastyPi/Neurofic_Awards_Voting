@@ -1,6 +1,4 @@
 const form = document.getElementById("awardForm");
-const code = (new URLSearchParams(window.location.search)).get('code');
-var token = null;
 var optElems = {};
 var votes = {};
 
@@ -100,7 +98,6 @@ function createForm() {
 }
 
 function saveVotes() {
-    votes.year = '2025';
     let str = JSON.stringify(votes);
     localStorage.setItem("Neurofic_Awards_Votes", str);
 }
@@ -108,84 +105,24 @@ function saveVotes() {
 function loadVotes() {
     let str = localStorage.getItem("Neurofic_Awards_Votes");
     if (str) {
-        votes = JSON.parse(str);
-        if (votes.year != '2025') return;
-        delete votes.year;
-        for (let i in votes) {
-            if (i == "username") continue;
-            let name = votes[i];
-            checkOption(i, name);
+        let votesTemp = JSON.parse(str);
+        if (votesTemp.year != '2025') return;
+        vote = votesTemp;
+        for (let i in categories) {
+            let cat = categories[i][0];
+            let name = votes[cat];
+            checkOption(cat, name);
         }
     }
 }
 
-function saveToken() {
-    let str = JSON.stringify(token);
-    localStorage.setItem("Neurofic_Awards_Discord_Token", str);
-}
-
-function loadToken() {
-    let str = localStorage.getItem("Neurofic_Awards_Discord_Token");
-    if (str) token = JSON.parse(str);
-}
-
-async function getToken() {
-    let response = await fetch(url, {
-        method: "POST",
-        headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: urlEncode({code:code})
-    });
-    response = await response.json();
-    if (response.result === "error") return false;
-    token = JSON.parse(response.token);
-    token.created_on = Math.floor(Date.now() / 1000);
-    saveToken();
-    return true;
-}
-
-async function refreshToken() {
-    let response = await fetch(url, {
-        method: "POST",
-        headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: urlEncode({refresh_token:token.refresh_token})
-    });
-    response = await response.json();
-    if (response.result === "error") return false;
-    token = JSON.parse(response.token);
-    token.created_on = Math.floor(Date.now() / 1000);
-    saveToken();
-    return true;
-}
-
 async function init() {
-    loadToken();
-    if (token !== null || code !== null) {
-        document.getElementById("loading").style.display = "block";
-        document.getElementById("discordAuthSect").style.display = "none";
-        if (token === null) {
-            let status = await getToken();
-            if (!status) {
-                document.getElementById("discordAuthSect").style.display = "";
-                document.getElementById("discordAuthErrorMsg").style.display = "block";
-                document.getElementById("loading").style.display = "";
-                return;
-            }
-        } else if (Math.ceil(Date.now()/1000)-token.created_on > token.expires_in*6/7) {
-            let status = await refreshToken();
-            if (!status) {
-                document.getElementById("discordAuthSect").style.display = "";
-                document.getElementById("discordAuthErrorMsg").style.display = "block";
-                document.getElementById("loading").style.display = "";
-                return;
-            }
-        }
-        document.getElementById("loading").style.display = "";
+    if (await initToken()) {
         createForm();
         loadVotes();
+        votes.year = year;
+        votes.type = "vote";
+        votes.token = JSON.stringify(token);
     }
 }
 
