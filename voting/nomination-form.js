@@ -21,9 +21,9 @@ function addCategory(cat, desc) {
     catDesc.classList.add("catDesc");
     catDesc.textContent = desc;
     catCont.appendChild(catDesc);
-    let catInput = document.createElement("input");
+    let catInput = document.createElement("textarea");
     catInput.classList.add("catInput");
-    catInput.addEventListener("input", (e)=>{
+    catInput.addEventListener("selectionchange", (e)=>{
         inputName(cat, e.target.value);
     });
     inputs[cat] = catInput;
