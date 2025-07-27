@@ -17,7 +17,7 @@ function checkOption(cat, name) {
     saveVotes();
 }
 
-function addOption(catCont, cat, name, link) {
+function addOption(catCont, cat, name, link, desc) {
     let optCont = document.createElement("div");
     optCont.classList.add("option");
     catCont.appendChild(optCont);
@@ -38,6 +38,14 @@ function addOption(catCont, cat, name, link) {
     let optLabel = document.createElement("div");
     optLabel.classList.add("optLabel");
     optLabel.textContent = name;
+
+    if (desc) {
+        let optDesc = document.createElement("div");
+        optDesc.classList.add("optDesc");
+        optDesc.textContent = desc;
+        optLabel.appendChild(optDesc);
+    }
+    
     optCont.appendChild(optLabel);
 
     let optLink;
@@ -71,10 +79,10 @@ function addCategory(cat) {
     optElems[cat] = {};
     votes[cat] = "Skip";
     for (let i in nominees[cat]) {
-        let [name, link] = nominees[cat][i];
-        addOption(catCont, cat, name, link);
+        let [name, link, desc] = nominees[cat][i];
+        addOption(catCont, cat, name, link, desc);
     }
-    addOption(catCont, cat, "Skip", undefined);
+    addOption(catCont, cat, "Skip", undefined, undefined);
     form.appendChild(catCont);
 }
 
@@ -117,7 +125,7 @@ function loadVotes() {
 }
 
 async function init() {
-    if (await initToken()) {
+    if (/* await initToken() */ true) {
         createForm();
         loadVotes();
         votes.year = year;

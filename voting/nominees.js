@@ -1,9 +1,9 @@
 const nominees = {
     "Best Comedy": [
-        ["Hot Singles In Your Area (Literally, It's Hell)", "https://archiveofourown.org/works/60263542"],
-        ["Neuro-sama is incoherent and is fucking doing stupid cartoon stuff", "https://archiveofourown.org/works/55732900"],
-        ["Ass Lyk Dat", "https://archiveofourown.org/works/58494925"],
-        ["The One-hundredth Neurofic", "https://archiveofourown.org/works/59003392"]
+        ["Hot Singles In Your Area (Literally, It's Hell)", "https://archiveofourown.org/works/60263542", "Helltaker but it's Neuroverse, lmao. I'm not sure what else to write here as an example. This is the third sentence, words, words, words."],
+        ["Neuro-sama is incoherent and is fucking doing stupid cartoon stuff", "https://archiveofourown.org/works/55732900", "The only fic title that spans two lines and gives me a headache in formatting. Words words words."],
+        ["Ass Lyk Dat", "https://archiveofourown.org/works/58494925", "'I'll moon the world' - Neuro-sama, but it's actually not Neuro at all and it has absolutely nothing to do with that quote."],
+        ["The One-hundredth Neurofic", "https://archiveofourown.org/works/59003392", "100!, which is not equal to 100, because of that little exclaimation mark there turning 100 to 100 factorial, which is just way too large. Combinatorics moment."]
     ],
     "Best Fluff": [
         ["Mission: be a good big sister!", "https://archiveofourown.org/works/55579519"],
