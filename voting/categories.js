@@ -9,6 +9,6 @@ const categories = [
     ["Best Plot","test"],
     ["Best World-Building","test"],
     ["Best Atmosphere","test"],
-    ["Best Prose","test"]
+    ["Best Prose","test"],
     ["Best Story","test"]
 ];
