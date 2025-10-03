@@ -1,5 +1,8 @@
 const code = (new URLSearchParams(window.location.search)).get('code');
+const redirect = "https://discord.com/oauth2/authorize?client_id=1389365966667780198&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A52330%2Fvoting%2Findex.html&scope=identify";
 var token = null;
+
+document.getElementById("discordAuthRedirect").setAttribute('href', redirect);
 
 function saveToken() {
     let str = JSON.stringify(token);
@@ -23,7 +26,7 @@ async function getToken() {
         })
     });
     response = await response.json();
-    if (response.result === "error") return false;
+    if (response.result === "access error") return false;
     token = JSON.parse(response.token);
     token.created_on = Math.floor(Date.now() / 1000);
     saveToken();

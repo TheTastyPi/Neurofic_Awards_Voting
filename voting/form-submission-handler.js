@@ -1,5 +1,5 @@
 const year = "2025";
-const url = "https://script.google.com/macros/s/AKfycbzatFlWgRZfeBv5o-Oo4pDUY4q8qsahevU5TSBWfFJcc-AgRhriCtdZNsY6QymPXLZN/exec";
+const url = "https://script.google.com/macros/s/AKfycbyanF1DXAMYIP7MQc6gGhjh7bCjrFGxnNvWysrHb7hr4qRjmDEFgBwLFTPrQ6fPHMgh/exec";
 
 function urlEncode(data) {
   return Object.keys(data).map(function(k) {
