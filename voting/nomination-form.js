@@ -1,6 +1,8 @@
 const form = document.getElementById("awardForm");
 var inputs = {};
 var votes = {};
+const startDate = new Date("2025-12-01T14:00Z");
+const endDate = new Date("2025-12-08T14:00Z");
 
 function inputName(cat, name) {
     let input = inputs[cat];
@@ -32,6 +34,14 @@ function addCategory(cat, desc) {
 }
 
 function createForm() {
+    document.getElementById("startDate").textContent = startDate.toLocaleString([], {
+        dateStyle: "medium",
+        timeStyle: "short"
+    });
+    document.getElementById("endDate").textContent = endDate.toLocaleString([], {
+        dateStyle: "medium",
+        timeStyle: "short"
+    });
     for (let i in categories) {
         addCategory(categories[i][0], categories[i][1]);
     }
