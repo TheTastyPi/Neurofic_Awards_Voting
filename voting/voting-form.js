@@ -125,7 +125,7 @@ function loadVotes() {
 }
 
 async function init() {
-    if (/* await initToken() */ true) {
+    if (await initToken()) {
         createForm();
         loadVotes();
         votes.year = year;

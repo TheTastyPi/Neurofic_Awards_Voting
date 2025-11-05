@@ -34,14 +34,6 @@ function addCategory(cat, desc) {
 }
 
 function createForm() {
-    document.getElementById("startDate").textContent = startDate.toLocaleString([], {
-        dateStyle: "medium",
-        timeStyle: "short"
-    });
-    document.getElementById("endDate").textContent = endDate.toLocaleString([], {
-        dateStyle: "medium",
-        timeStyle: "short"
-    });
     for (let i in categories) {
         addCategory(categories[i][0], categories[i][1]);
     }
@@ -79,7 +71,19 @@ function loadVotes() {
     }
 }
 
+function initDates() {
+    document.getElementById("startDate").textContent = startDate.toLocaleString([], {
+        dateStyle: "medium",
+        timeStyle: "short"
+    });
+    document.getElementById("endDate").textContent = endDate.toLocaleString([], {
+        dateStyle: "medium",
+        timeStyle: "short"
+    });
+}
+
 async function init() {
+    initDates();
     if (await initToken()) {
         createForm();
         loadVotes();
