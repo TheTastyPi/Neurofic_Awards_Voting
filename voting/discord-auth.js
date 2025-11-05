@@ -1,5 +1,5 @@
 const code = (new URLSearchParams(window.location.search)).get('code');
-const redirect = "https://discord.com/oauth2/authorize?client_id=1389365966667780198&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A52330%2Fvoting%2Findex.html&scope=identify";
+const redirect = "https://discord.com/oauth2/authorize?client_id=1389365966667780198&response_type=code&redirect_uri=https%3A%2F%2Fthetastypi.github.io%2FNeurofic_Awards_Voting%2Fvoting%2F&scope=identify";
 var token = null;
 
 document.getElementById("discordAuthRedirect").setAttribute('href', redirect);
