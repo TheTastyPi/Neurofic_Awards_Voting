@@ -7,7 +7,7 @@ function initDropdownContent() {
     content.classList.add("dropdownContent");
     for (let i = startYear; i < startYear + yearsElapsed; i++) {
         let link = document.createElement("a");
-        link.href = `/archive/${i}/`;
+        link.href = new URL(`../archive/${i}/`, window.location.href).href;
         link.textContent = i;
         content.appendChild(link);
     }
