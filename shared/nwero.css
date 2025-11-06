@@ -1,0 +1,52 @@
+body {
+    background-color: pink;
+}
+
+.dropdownLabel {
+    background-color: rgb(233, 154, 166);
+    color: black;
+}
+
+.dropdownContent {
+    background-color: white;
+}
+
+.dropdownContent a {
+    color: black;
+}
+
+.dropdownContent a:hover {background-color: lightgray;}
+
+.dropdown.active .dropdownLabel {background-color: rgb(215, 142, 153);}
+
+#preamble {
+    background-color: rgba(255,255,255,0.5);
+}
+
+#discordBtn {
+    border: 2px black solid;
+    background-color: #5865F2;
+    color: white;
+}
+
+.option {
+    border: 2px black solid;
+    background-color: white;
+}
+
+.optDesc {
+    color: #444444;
+}
+
+.checked {
+    background: rgb(0, 191, 255);
+}
+
+#sendBtn {
+    border: 2px black solid;
+    background-color: white;
+}
+
+.themeToggleBtn {
+    background-image: url("../img/nwero.png");
+}

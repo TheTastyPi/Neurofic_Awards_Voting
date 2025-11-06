@@ -7,7 +7,7 @@ function initDropdownContent() {
     content.classList.add("dropdownContent");
     for (let i = startYear; i < startYear + yearsElapsed; i++) {
         let link = document.createElement("a");
-        link.href = `https://thetastypi.github.io/Neurofic_Awards_Voting/archive/${i}/`;
+        link.href = `/Neurofic_Awards_Voting/archive/${i}/`;
         link.textContent = i;
         content.appendChild(link);
     }

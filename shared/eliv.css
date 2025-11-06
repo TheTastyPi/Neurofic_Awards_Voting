@@ -1,0 +1,58 @@
+body {
+    background-color: #952D33;
+    color: white;
+}
+
+.dropdownLabel {
+    background-color: rgb(175, 116, 125);
+    color: white;
+}
+
+.dropdownContent {
+    background-color: black;
+}
+
+.dropdownContent a {
+    color: white;
+}
+
+.dropdownContent a:hover {background-color: gray;}
+
+.dropdown.active .dropdownLabel {background-color: rgb(155, 102, 110);}
+
+#preamble {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#discordBtn {
+    border: 2px black solid;
+    background-color: #5865F2;
+    color: white;
+}
+
+.option {
+    border: 2px white solid;
+    background-color: black;
+}
+
+.optDesc {
+    color: #444444;
+}
+
+.checked {
+    background: rgb(0, 125, 167);
+}
+
+#sendBtn {
+    color: white;
+    border: 2px white solid;
+    background-color: black;
+}
+
+.themeToggleBtn {
+    background-image: url("../img/eliv.png");
+}
+
+a {
+    color: lightblue;
+}
