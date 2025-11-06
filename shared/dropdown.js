@@ -3,11 +3,13 @@ const startYear = 2024;
 const yearsElapsed = 1;
 
 function initDropdownContent() {
+    const base = "/Neurofic_Awards_Voting/";
+    //const base = "/";
     let content = document.createElement("div");
     content.classList.add("dropdownContent");
     for (let i = startYear; i < startYear + yearsElapsed; i++) {
         let link = document.createElement("a");
-        link.href = `/Neurofic_Awards_Voting/archive/${i}/`;
+        link.href = base+`archive/${i}/`;
         link.textContent = i;
         content.appendChild(link);
     }

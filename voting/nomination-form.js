@@ -25,6 +25,7 @@ function addCategory(cat, desc) {
     catCont.appendChild(catDesc);
     let catInput = document.createElement("textarea");
     catInput.classList.add("catInput");
+    catInput.placeholder = "Put a nomination here...\nMaybe even another one...";
     catInput.addEventListener("selectionchange", (e)=>{
         inputName(cat, e.target.value);
     });

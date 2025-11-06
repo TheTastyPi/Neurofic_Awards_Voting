@@ -13,8 +13,10 @@ function toggleTheme() {
 }
 
 function updateTheme() {
+    const base = "/Neurofic_Awards_Voting";
+    //const base = "/";
     let stylesheet = document.getElementById("styleTheme");
-    stylesheet.setAttribute("href", `/Neurofic_Awards_Voting/shared/${theme}.css`);
+    stylesheet.setAttribute("href", base+`shared/${theme}.css`);
     saveTheme();
 }
 
