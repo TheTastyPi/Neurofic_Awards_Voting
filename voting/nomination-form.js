@@ -16,7 +16,7 @@ const worksReadCat = [
 function addWorksReadQ() {
     let worksReadQ = document.createElement("div");
     worksReadQ.classList.add("worksReadQ");
-    worksReadQ.append("Please tell us how many Neuroverse works you have read!");
+    worksReadQ.append("Please tell us how many Neuroverse works you have read! Just give an estimate; it doesn't have to be exact.");
     worksReadQ.appendChild(document.createElement("br"));
     worksReadQ.append("This question is just for fun and has no impact on your nominations.");
     let inputContainer = document.createElement("div");
