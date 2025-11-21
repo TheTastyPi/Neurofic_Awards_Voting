@@ -1,8 +1,51 @@
 const form = document.getElementById("awardForm");
+var worksReadInputs = {};
 var inputs = {};
 var votes = {};
 const startDate = new Date("2025-12-01T14:00Z");
 const endDate = new Date("2025-12-08T14:00Z");
+
+const worksReadCat = [
+    "30-50",
+    "51-75",
+    "76-100",
+    "101-200",
+    "201+"
+]
+
+function addWorksReadQ() {
+    let worksReadQ = document.createElement("div");
+    worksReadQ.classList.add("worksReadQ");
+    worksReadQ.append("Please tell us how many Neuroverse works you have read!");
+    worksReadQ.appendChild(document.createElement("br"));
+    worksReadQ.append("This question is just for fun and has no impact on your nominations.");
+    let inputContainer = document.createElement("div");
+    let inputList = document.createElement("div");
+    inputList.classList.add("worksReadInputs");
+    for (let i in worksReadCat) {
+        let catName = worksReadCat[i];
+        let input = document.createElement("input");
+        input.type = "radio";
+        input.id = catName;
+        input.name = "worksReadQ";
+        input.value = catName;
+        input.addEventListener("click", function(){
+            votes["Works Read"] = catName;
+            saveVotes();
+        });
+        if (i == 0) input.checked = true;
+        worksReadInputs[catName] = input;
+        let label = document.createElement("label");
+        label.for = catName;
+        label.textContent = catName;
+        inputList.appendChild(input);
+        inputList.appendChild(label);
+        inputList.appendChild(document.createElement("br"));
+    }
+    inputContainer.appendChild(inputList);
+    worksReadQ.appendChild(inputContainer);
+    form.appendChild(worksReadQ);
+}
 
 function inputName(cat, name) {
     let input = inputs[cat];
@@ -35,6 +78,8 @@ function addCategory(cat, desc) {
 }
 
 function createForm() {
+    addWorksReadQ();
+
     for (let i in categories) {
         addCategory(categories[i][0], categories[i][1]);
     }
@@ -64,10 +109,12 @@ function loadVotes() {
         let votesTemp = JSON.parse(str);
         if (votesTemp.year != '2025') return;
         votes = votesTemp;
+        if (votes["Works Read"]) worksReadInputs[votes["Works Read"]].checked = true;
         for (let i in categories) {
             let cat = categories[i][0];
             let name = votes[cat];
-            inputName(cat, name)
+            if (!name) continue;
+            inputName(cat, name);
         }
     }
 }

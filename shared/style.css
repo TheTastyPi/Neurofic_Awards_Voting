@@ -74,6 +74,16 @@ body {
     font-size: 40px;
 }
 
+.worksReadQ {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.worksReadInputs {
+    text-align: left;
+    display: inline-block;
+}
+
 .catLabel {
     text-align: center;
     font-size: 30px;
