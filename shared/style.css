@@ -92,6 +92,8 @@ body {
 
 .catDesc {
     font-size: 20px;
+    width: 500px;
+    display: inline-block;
 }
 
 .catInput {

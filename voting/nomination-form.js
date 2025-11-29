@@ -58,14 +58,19 @@ function addCategory(cat, desc) {
     votes[cat] = "";
     let catCont = document.createElement("div");
     catCont.classList.add("category");
+
     let catLabel = document.createElement("div");
     catLabel.classList.add("catLabel");
     catLabel.textContent = cat;
     catCont.appendChild(catLabel);
+
     let catDesc = document.createElement("div");
     catDesc.classList.add("catDesc");
     catDesc.textContent = desc;
     catCont.appendChild(catDesc);
+
+    catCont.appendChild(document.createElement("br"));
+
     let catInput = document.createElement("textarea");
     catInput.classList.add("catInput");
     catInput.placeholder = "Put a nomination here...\nMaybe even another one...";
@@ -74,6 +79,7 @@ function addCategory(cat, desc) {
     });
     inputs[cat] = catInput;
     catCont.appendChild(catInput);
+
     form.appendChild(catCont);
 }
 
@@ -83,8 +89,7 @@ function createForm() {
     for (let i in categories) {
         addCategory(categories[i][0], categories[i][1]);
     }
-    let lineBreak = document.createElement("br");
-    form.appendChild(lineBreak);
+    form.appendChild(document.createElement("br"));
 
     let resendMsg = document.createElement("p");
     form.appendChild(resendMsg);
