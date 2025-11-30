@@ -29,6 +29,10 @@ body {
     color: white;
 }
 
+.catDesc {
+    color: #444444;
+}
+
 .option {
     border: 2px black solid;
     background-color: white;
