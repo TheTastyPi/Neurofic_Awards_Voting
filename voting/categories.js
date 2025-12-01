@@ -1,5 +1,5 @@
 const categories = [
-    ["Best Use of Comedy","The funniest stories. This category is for ones that made you laugh, chuckle, or you otherwise found highly amusing."],
+    ["Best Use of Comedy","The funniest stories. This category is for works that made you laugh, chuckle, or you otherwise found highly amusing."],
     ["Best Use of Fluff","Stories that left you feeling warm and fuzzy. This category is for works that are pleasant, hopeful, and generally positive."],
     ["Best Use of Hurt/Comfort","There's nothing that highlights positivity more than negativity. This category is for fics that, while sometimes angsty and heavy, also contain happier moments too."],
     ["Best Use of Angst","Sadness, anger, misery, despair. If the story's overall theme is negative it falls into the angst category."],
@@ -11,5 +11,5 @@ const categories = [
     ["Best Atmosphere","If an underlying emotion is well evoked through the story's development, you've got yourself a great atmosphere. This category captures works that leave you with lingering— happy or sad— emotions afterward."],
     ["Best Prose","Some stories have a particular cadence that simply flows. This category features fics that contain a strong, consistent, and well paced structure."],
     ["Hidden Gem", "Some great stories fly under the radar and don't get the attention other stories do. This category is to give recognition to the best stories that have less than 300 hits on AO3 (at the time of nomination.)"],
-    ["Best Story","The story you felt was the best. Simply as that."]
+    ["Best Story","The stories you felt was the best. Simply as that."]
 ];
