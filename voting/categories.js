@@ -1,7 +1,7 @@
 const categories = [
     ["Best Use of Comedy","The funniest stories. This category is for works that made you laugh, chuckle, or you otherwise found highly amusing."],
     ["Best Use of Fluff","Stories that left you feeling warm and fuzzy. This category is for works that are pleasant, hopeful, and generally positive."],
-    ["Best Use of Hurt/Comfort","There's nothing that highlights positivity more than negativity. This category is for fics that, while sometimes angsty and heavy, also contain happier moments too."],
+    ["Best Use of Hurt/Comfort","There's nothing that highlights positivity more than negativity. This category is for stories that have angst that is followed by comfort as relief from the angst."],
     ["Best Use of Angst","Sadness, anger, misery, despair. If the story's overall theme is negative it falls into the angst category."],
     ["Best Use of Romance","This category is for stories that heavily feature love that goes beyond family and friendship."],
     ["Best Action","Lights, camera, action! These stories feature motion and quick paced scenes, never leaving a dull moment."],
