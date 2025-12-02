@@ -2,7 +2,7 @@ const form = document.getElementById("awardForm");
 var worksReadInputs = {};
 var inputs = {};
 var votes = {
-    "Works Read": "30-50"
+    "Works Read": worksReadCat[0]
 };
 const startDate = new Date("2025-12-01T14:00Z");
 const endDate = new Date("2025-12-08T14:00Z");
@@ -115,8 +115,9 @@ function loadVotes() {
     if (str) {
         let votesTemp = JSON.parse(str);
         if (votesTemp.year != '2025') return;
+        if (!votesTemp["Works Read"]) votesTemp["Works Read"] = worksReadCat[0];
         votes = votesTemp;
-        if (votes["Works Read"]) worksReadInputs[votes["Works Read"]].checked = true;
+        worksReadInputs[votes["Works Read"]].checked = true;
         for (let i in categories) {
             let cat = categories[i][0];
             let name = votes[cat];
