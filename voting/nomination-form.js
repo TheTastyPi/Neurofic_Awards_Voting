@@ -1,7 +1,9 @@
 const form = document.getElementById("awardForm");
 var worksReadInputs = {};
 var inputs = {};
-var votes = {};
+var votes = {
+    "Works Read": "30-50"
+};
 const startDate = new Date("2025-12-01T14:00Z");
 const endDate = new Date("2025-12-08T14:00Z");
 
