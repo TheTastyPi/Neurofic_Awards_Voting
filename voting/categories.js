@@ -10,6 +10,6 @@ const categories = [
     ["Best World-Building","Some stories go above and beyond and truly develop what feels like an entire other world. This category captures that feeling of more to the story's time, place, or environment."],
     ["Best Atmosphere","If an underlying emotion is well evoked through the story's development, you've got yourself a great atmosphere. This category captures works that leave you with lingering— happy or sad— emotions afterward."],
     ["Best Prose","Some stories have a particular cadence that simply flows. This category features fics that contain a strong, consistent, and well paced structure."],
-    ["Hidden Gem", "Some great stories fly under the radar and don't get the attention other stories do. This category is to give recognition to the best stories that have less than 300 hits on AO3 (at the time of nomination.)"],
+    ["Hidden Gem", "Some great stories fly under the radar and don't get the attention other stories do. This category is to give recognition to the best stories that have been around for a while and aren't really noticed by the community."],
     ["Best Story","The stories you felt were the best. Simple as that."]
 ];
