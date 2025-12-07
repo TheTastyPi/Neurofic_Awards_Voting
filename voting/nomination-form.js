@@ -14,7 +14,7 @@ var votes = {
     "Works Read": worksReadCat[0]
 };
 const startDate = new Date("2025-12-01T14:00Z");
-const endDate = new Date("2025-12-08T14:00Z");
+const endDate = new Date("2025-12-10T14:00Z");
 
 function addWorksReadQ() {
     let worksReadQ = document.createElement("div");
