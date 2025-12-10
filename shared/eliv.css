@@ -65,3 +65,7 @@ a {
     background-color: black;
     color: white;
 }
+
+.box {
+    background-image: url("../img/eliv.png");
+}
