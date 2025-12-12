@@ -2,6 +2,9 @@ const form = document.getElementById("awardForm");
 var optElems = {};
 var votes = {};
 
+const startDate = new Date("2025-12-12T14:00Z");
+const endDate = new Date("2025-12-31T14:00Z");
+
 function uncheckAll(cat) {
     for (let i in optElems[cat]) {
         optElems[cat][i].classList.remove("checked");
@@ -124,7 +127,19 @@ function loadVotes() {
     }
 }
 
+function initDates() {
+    document.getElementById("startDate").textContent = startDate.toLocaleString([], {
+        dateStyle: "medium",
+        timeStyle: "short"
+    });
+    document.getElementById("endDate").textContent = endDate.toLocaleString([], {
+        dateStyle: "medium",
+        timeStyle: "short"
+    });
+}
+
 async function init() {
+    initDates();
     if (await initToken()) {
         createForm();
         loadVotes();
