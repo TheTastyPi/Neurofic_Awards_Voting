@@ -1,3 +1,4 @@
+const year = "2025";
 const form = document.getElementById("awardForm");
 
 const worksReadCat = [
@@ -103,6 +104,7 @@ function createForm() {
     let sendBtn = document.createElement("button");
     sendBtn.id = "sendBtn";
     sendBtn.textContent = "Send";
+    sendBtn.addEventListener("click", handleFormSubmit);
     form.appendChild(sendBtn);
 }
 
@@ -115,7 +117,8 @@ function loadVotes() {
     let str = localStorage.getItem("Neurofic_Awards_Nominations");
     if (str) {
         let votesTemp = JSON.parse(str);
-        if (votesTemp.year != '2025') return;
+        if (votesTemp.year != year) return;
+        if (votesTemp["Best Comedy"]) return;
         if (!votesTemp["Works Read"]) votesTemp["Works Read"] = worksReadCat[0];
         votes = votesTemp;
         worksReadInputs[votes["Works Read"]].checked = true;

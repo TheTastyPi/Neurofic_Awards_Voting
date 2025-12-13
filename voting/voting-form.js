@@ -1,23 +1,83 @@
+const year = "2025";
 const form = document.getElementById("awardForm");
 var optElems = {};
 var votes = {};
 
-const startDate = new Date("2025-12-12T14:00Z");
+const startDate = new Date("2025-12-15T14:00Z");
 const endDate = new Date("2025-12-31T14:00Z");
 
-function uncheckAll(cat) {
+function uncheckAll(cat, btnClassName) {
     for (let i in optElems[cat]) {
+        optElems[cat][i].classList.remove(btnClassName);
         optElems[cat][i].classList.remove("checked");
     }
 }
 
-function checkOption(cat, name) {
-    uncheckAll(cat);
-    let cont = optElems[cat][name];
-    cont.children[0].checked = "checked";
-    cont.classList.add("checked");
-    votes[cat] = name;
+function getBtnClassName(rank) {
+    switch (rank) {
+        case 0:
+            return "checked";
+        case 1:
+            return "goldBtn";
+        case 2:
+            return "silverBtn";
+        case 3:
+            return "bronzeBtn";
+    }
+}
+
+function assignRank(cat, name, rank) {
+    let btnClassName = getBtnClassName(rank);
+    if (rank === 0) {
+        uncheckAll(cat, "goldBtn");
+        uncheckAll(cat, "silverBtn");
+        uncheckAll(cat, "bronzeBtn");
+        let cont = optElems[cat][name];
+        cont.classList.add(btnClassName);
+        for (let i = 1; i <= 3; i++) votes[cat+i] = name;
+    } else {
+        uncheckAll(cat, btnClassName);
+        let cont = optElems[cat][name];
+        cont.classList.remove("goldBtn");
+        cont.classList.remove("silverBtn");
+        cont.classList.remove("bronzeBtn");
+        cont.classList.add(btnClassName);
+        for (let i = 1; i <= 3; i++) {
+            if (votes[cat+i] === name) votes[cat+i] = "Skip";
+        }
+        votes[cat+rank] = name;
+    }
     saveVotes();
+}
+
+function addRankSelector(optCont, cat, name) {
+    let medalBtnCont = document.createElement("div");
+    medalBtnCont.classList.add("medalBtnCont");
+    optCont.appendChild(medalBtnCont);
+
+    let goldBtn = document.createElement("button");
+    goldBtn.classList.add("medalBtn");
+    goldBtn.classList.add("goldBtn");
+    goldBtn.addEventListener("click", function(){
+        assignRank(cat, name, 1);
+    })
+    medalBtnCont.appendChild(goldBtn);
+
+    let silverBtn = document.createElement("button");
+    silverBtn.classList.add("medalBtn");
+    silverBtn.classList.add("silverBtn");
+    silverBtn.addEventListener("click", function(){
+        assignRank(cat, name, 2);
+    })
+    medalBtnCont.appendChild(silverBtn);
+
+    let bronzeBtn = document.createElement("button");
+    bronzeBtn.classList.add("medalBtn");
+    bronzeBtn.classList.add("bronzeBtn");
+    bronzeBtn.addEventListener("click", function(){
+        assignRank(cat, name, 3);
+    })
+    medalBtnCont.appendChild(bronzeBtn);
 }
 
 function addOption(catCont, cat, name, link, desc) {
@@ -26,17 +86,7 @@ function addOption(catCont, cat, name, link, desc) {
     catCont.appendChild(optCont);
     optElems[cat][name] = optCont;
 
-    let optInput = document.createElement("input");
-    optInput.classList.add("optInput");
-    optInput.name = cat;
-    optInput.type = "radio";
-    optInput.value = name;
-    if (name == "Skip") {
-        optInput.checked = "checked";
-        optCont.classList.add("checked");
-        optCont.classList.add("skip");
-    }
-    optCont.appendChild(optInput);
+    if (name !== "Skip") addRankSelector(optCont, cat, name)
 
     let optLabel = document.createElement("div");
     optLabel.classList.add("optLabel");
@@ -61,12 +111,15 @@ function addOption(catCont, cat, name, link, desc) {
         optCont.appendChild(optLink);
     }
 
-    optCont.addEventListener("click", function(e){
-        if (link && e.target == optLink) return;
-        if (e.button == 0) {
-            checkOption(cat, name);
-        }
-    })
+    if (name === "Skip") {
+        optCont.classList.add("checked");
+        optCont.classList.add("skip");
+        optCont.addEventListener("click", function(e){
+            if (e.button == 0) {
+                assignRank(cat, name, 0);
+            }
+        })
+    }
 
     let lineBreak = document.createElement("br");
     catCont.appendChild(lineBreak);
@@ -80,7 +133,7 @@ function addCategory(cat) {
     catLabel.textContent = cat;
     catCont.appendChild(catLabel);
     optElems[cat] = {};
-    votes[cat] = "Skip";
+    for (let i = 1; i <= 3; i++) votes[cat+i] = "Skip";
     for (let i in nominees[cat]) {
         let [name, link, desc] = nominees[cat][i];
         addOption(catCont, cat, name, link, desc);
@@ -102,9 +155,23 @@ function createForm() {
     resendMsg.style.display = "none";
     resendMsg.id = "resendMsg";
 
+    let sendMissingMsg = document.createElement("p");
+    form.appendChild(sendMissingMsg);
+    sendMissingMsg.textContent = "There are unfinished categories! For each category, please either give your top three, or skip.";
+    sendMissingMsg.style.display = "none";
+    sendMissingMsg.id = "sendMissingMsg";
+
     let sendBtn = document.createElement("button");
     sendBtn.id = "sendBtn";
     sendBtn.textContent = "Send";
+    sendBtn.addEventListener("click", function(e) {
+        if (!voteIsValid()) {
+            sendMissingMsg.style.display = "";
+            return;
+        }
+        sendMissingMsg.style.display = "none";
+        handleFormSubmit(e);
+    });
     form.appendChild(sendBtn);
 }
 
@@ -117,12 +184,15 @@ function loadVotes() {
     let str = localStorage.getItem("Neurofic_Awards_Votes");
     if (str) {
         let votesTemp = JSON.parse(str);
-        if (votesTemp.year != '2025') return;
-        vote = votesTemp;
+        if (votesTemp.year != year) return;
+        votes = votesTemp;
         for (let i in categories) {
             let cat = categories[i][0];
-            let name = votes[cat];
-            checkOption(cat, name);
+            for (let i = 1; i <=3; i++) {
+                let name = votes[cat+i];
+                if (name === "Skip") continue;
+                assignRank(cat, name, i);
+            }
         }
     }
 }
@@ -138,15 +208,25 @@ function initDates() {
     });
 }
 
+function voteIsValid() {
+    let valid = true;
+    for (let i in categories) {
+        let cat = categories[i][0];
+        valid &&= (votes[cat+1] === "Skip" && votes[cat+2] === "Skip" && votes[cat+3] === "Skip") ||
+                  (votes[cat+1] !== "Skip" && votes[cat+2] !== "Skip" && votes[cat+3] !== "Skip");
+    }
+    return valid;
+}
+
 async function init() {
     initDates();
-    if (await initToken()) {
+    //if (await initToken()) {
         createForm();
         loadVotes();
         votes.year = year;
         votes.type = "vote";
         votes.token = JSON.stringify(token);
-    }
+    //}
 }
 
 init();

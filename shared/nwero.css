@@ -42,6 +42,22 @@ body {
     color: #444444;
 }
 
+.medalBtn {
+    border: 2px black solid;
+}
+
+.goldBtn {
+    background-color: gold;
+}
+
+.silverBtn {
+    background-color: silver;
+}
+
+.bronzeBtn {
+    background-color: #CD7F32;
+}
+
 .checked {
     background: rgb(0, 191, 255);
 }

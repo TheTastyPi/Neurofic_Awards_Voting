@@ -1,4 +1,3 @@
-const year = "2025";
 const url = "https://script.google.com/macros/s/AKfycbyanF1DXAMYIP7MQc6gGhjh7bCjrFGxnNvWysrHb7hr4qRjmDEFgBwLFTPrQ6fPHMgh/exec";
 
 function urlEncode(data) {
@@ -30,15 +29,5 @@ async function handleFormSubmit(event) {
   } catch {
     sendBtn.disabled = false;
     sendBtn.textContent = "Failed to send! Please try again.";
-    let resendMsg = document.getElementById("resendMsg");
-    resendMsg.style.display = "";
   }
 }
-
-function loaded() {
-  let forms = document.querySelectorAll("form.gform");
-  for (let i = 0; i < forms.length; i++) {
-    forms[i].addEventListener("submit", handleFormSubmit, false);
-  }
-};
-document.addEventListener("DOMContentLoaded", loaded, false);

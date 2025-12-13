@@ -39,6 +39,22 @@ body {
     color: #cccccc;
 }
 
+.medalBtn {
+    border: 2px white solid;
+}
+
+.goldBtn {
+    background-color: goldenrod;
+}
+
+.silverBtn {
+    background-color: gray;
+}
+
+.bronzeBtn {
+    background-color: #804A00;
+}
+
 .checked {
     background: rgb(0, 125, 167);
 }
