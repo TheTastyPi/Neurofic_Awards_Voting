@@ -220,13 +220,13 @@ function voteIsValid() {
 
 async function init() {
     initDates();
-    //if (await initToken()) {
+    if (await initToken()) {
         createForm();
         loadVotes();
         votes.year = year;
         votes.type = "vote";
         votes.token = JSON.stringify(token);
-    //}
+    }
 }
 
 init();
