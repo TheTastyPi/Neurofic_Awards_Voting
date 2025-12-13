@@ -185,6 +185,7 @@ function loadVotes() {
     if (str) {
         let votesTemp = JSON.parse(str);
         if (votesTemp.year != year) return;
+        if (votesTemp["Best Comedy"]) return;
         votes = votesTemp;
         for (let i in categories) {
             let cat = categories[i][0];

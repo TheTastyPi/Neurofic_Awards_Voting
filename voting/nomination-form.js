@@ -118,7 +118,6 @@ function loadVotes() {
     if (str) {
         let votesTemp = JSON.parse(str);
         if (votesTemp.year != year) return;
-        if (votesTemp["Best Comedy"]) return;
         if (!votesTemp["Works Read"]) votesTemp["Works Read"] = worksReadCat[0];
         votes = votesTemp;
         worksReadInputs[votes["Works Read"]].checked = true;
