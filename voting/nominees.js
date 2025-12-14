@@ -1,6 +1,6 @@
 const nominees = {
     "Best Use of Comedy": [
-        ["Neuro Eats Leaves", "https://archiveofourown.org/works/73195586"],
+        ["Neuro Eats Leaves/Cats", "https://archiveofourown.org/series/5410111"],
         ["To Entertain A Presidential Nwero", "https://archiveofourown.org/works/70733066"],
         ["It's Vedal, Rhymes With Pedal and Medal!", "https://archiveofourown.org/works/67312114"],
         ["Overflowing", "https://archiveofourown.org/works/71045836"],
