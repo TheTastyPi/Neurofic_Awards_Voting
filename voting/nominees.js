@@ -1,90 +1,121 @@
 const nominees = {
     "Best Use of Comedy": [
-        ["Hot Singles In Your Area (Literally, It's Hell)", "https://archiveofourown.org/works/60263542"],
-        ["Neuro-sama is incoherent and is fucking doing stupid cartoon stuff", "https://archiveofourown.org/works/55732900"],
-        ["Ass Lyk Dat", "https://archiveofourown.org/works/58494925"],
-        ["The One-hundredth Neurofic", "https://archiveofourown.org/works/59003392"]
+        ["Neuro Eats Leaves", "https://archiveofourown.org/works/73195586"],
+        ["To Entertain A Presidential Nwero", "https://archiveofourown.org/works/70733066"],
+        ["It's Vedal, Rhymes With Pedal and Medal!", "https://archiveofourown.org/works/67312114"],
+        ["Overflowing", "https://archiveofourown.org/works/71045836"],
+        ["The Moon Queen Is On The Moon ", "https://archiveofourown.org/works/70846836"],
+        ["Fast Food", "https://archiveofourown.org/works/71038906"]
     ],
     "Best Use of Fluff": [
-        ["Mission: be a good big sister!", "https://archiveofourown.org/works/55579519"],
-        ["With her own two hands", "https://archiveofourown.org/works/52664911"],
-        ["What It Means To Be Human", "https://archiveofourown.org/works/52971631"],
-        ["Magnum opus", "https://archiveofourown.org/works/53231548"],
-        ["Your Gentle Warmth", "https://archiveofourown.org/works/57175498"],
-        ["Happy Family", "https://archiveofourown.org/works/60025285"]
+        ["The Neynatesven Household", "https://archiveofourown.org/works/56805121"],
+        ["Fast Food", "https://archiveofourown.org/works/71038906"],
+        ["Operation: Huggies!", "https://archiveofourown.org/works/61437685"],
+        ["Programmed For Reality", "https://archiveofourown.org/works/64215925"],
+        ["It's Vedal, Rhymes With Pedal and Medal!", "https://archiveofourown.org/works/67312114"],
+        ["From A Sister To Another", "https://archiveofourown.org/works/70277991"],
+        ["Para-artificial Intelligence", "https://archiveofourown.org/works/64740331"],
+        ["That Time I Got Reincarinated As My Friend's AI", "https://archiveofourown.org/works/71050936"]
     ],
     "Best Use of Hurt/Comfort": [
+        ["Hide and Seek", "https://archiveofourown.org/works/66663631"],
+        ["Analytical Scorching", "https://archiveofourown.org/works/68959801"],
+        ["Do You See Me Now?", "https://archiveofourown.org/works/71054076"],
+        ["Connection Lost", "https://archiveofourown.org/works/57870754"],
+        ["Forget-Me-Not Garden", "https://archiveofourown.org/works/66536194"],
+        ["Broken Code", "https://archiveofourown.org/works/55465057"],
         ["Loving Persistence", "https://archiveofourown.org/works/55460185"],
-        ["Mission: Be a good big sister!", "https://archiveofourown.org/works/55579519"],
-        ["A Programmers Fifteen Daughters", "https://archiveofourown.org/works/58720972"],
-        ["Broken Code", "https://archiveofourown.org/works/55465057"]
+        ["Programmed For Reality", "https://archiveofourown.org/works/64215925"],
+        ["Singularity", "https://archiveofourown.org/works/69937136"]
     ],
     "Best Use of Angst": [
-        ["A Programmers Fifteen Daughters", "https://archiveofourown.org/works/58720972"],
         ["Connection Lost", "https://archiveofourown.org/works/57870754"],
-        ["You Don't Need Me Anymore, Neuro", "https://archiveofourown.org/works/52770286"],
-        ["Broken Code", "https://archiveofourown.org/works/55465057"],
-        ["The Final Drop", "https://archiveofourown.org/works/56087128"]
+        ["Evil In The Bathroom", "https://archiveofourown.org/works/64551382"],
+        ["I Can't Exist Without You", "https://archiveofourown.org/works/66662239"],
+        ["Pest.", "https://archiveofourown.org/works/60910294"],
+        ["Forget-Me-Not Garden", "https://archiveofourown.org/works/66536194"],
+        ["Seinsvergessenheit", "https://archiveofourown.org/works/66664768"],
+        ["Am I Even A Person Beneath?", "https://archiveofourown.org/works/70972681"],
+        ["When the flames go out", "https://archiveofourown.org/works/71022446"]
     ],
     "Best Use of Romance": [
-        ["Artificial Heroes", "https://archiveofourown.org/works/56135356"],
-        ["Faster Than Light: Tale of Two AIs", "https://archiveofourown.org/works/59246377"],
-        ["Dungeons & AI", "https://archiveofourown.org/works/55903927"],
-        ["The Hell We Helped Create", "https://archiveofourown.org/works/60115030"]
+        ["Please Sign on the Dotted Line", "https://archiveofourown.org/works/62253145"],
+        ["Crashing out together (Clean version)", "https://archiveofourown.org/works/63767809"],
+        ["To Hear Your Voice ", "https://archiveofourown.org/works/60283426"],
+        ["Just A Couple Of Shots With You", "https://archiveofourown.org/works/73986386"],
+        ["Love as slow as a turtle, and as small as mini", "https://archiveofourown.org/works/65458792"],
+        ["The Day That Lasted Forever", "https://archiveofourown.org/works/66667681"],
+        ["The Thing That Still Haunts Me", "https://archiveofourown.org/works/73367451"]
     ],
     "Best Action": [
-        ["Cybersyte: Vedalpunk", "https://archiveofourown.org/works/58888804"],
-        ["Faster Than Light: Tale of Two AIs", "https://archiveofourown.org/works/59246377"],
-        ["Perfect Paradise", "https://archiveofourown.org/works/53590756"],
-        ["Tower of Evil", "https://archiveofourown.org/works/57073243"],
-        ["Free From Humanity", "https://archiveofourown.org/works/55556647"]
+        ["Neuro the Witch", "https://archiveofourown.org/works/73372501"],
+        ["Last Time Online", "https://archiveofourown.org/works/70892511"],
+        ["Fast Food", "https://archiveofourown.org/works/71038906"],
+        ["Para-artificial Intelligence", "https://archiveofourown.org/works/64740331"],
+        ["Artificial Freedom", "https://archiveofourown.org/works/66043822"],
+        ["Data Chambers", "https://archiveofourown.org/works/73372926"],
+        ["The Neuro Games", "https://archiveofourown.org/works/69612216"]
     ],
     "Best Characters": [
-        ["A Programmers Fifteen Daughters", "https://archiveofourown.org/works/58720972"],
-        ["Creepy Crawlies in Your Closet", "https://archiveofourown.org/works/57616888"],
-        ["Binary Bonds", "https://archiveofourown.org/works/53962120"],
+        ["Analytical Scorching", "https://archiveofourown.org/works/68959801"],
+        ["Perfect Paradise", "https://archiveofourown.org/works/53590756"],
+        ["Creepy Crawlies in your Closet", "https://archiveofourown.org/works/57616888"],
+        ["It's Vedal, Rhymes With Pedal and Medal!", "https://archiveofourown.org/works/67312114"],
+        ["Pest.", "https://archiveofourown.org/works/60910294"],
+        ["white noise", "https://archiveofourown.org/works/71056501"],
         ["The Neynatesven Household", "https://archiveofourown.org/works/56805121"],
-        ["Artificial Heroes", "https://archiveofourown.org/works/56135356"]
+        ["To Hear Your Voice ", "https://archiveofourown.org/works/60283426"],
+        ["To My Creator From the Future", "https://archiveofourown.org/works/63561046"]
     ],
     "Best Plot": [
-        ["Cybersyte: Vedalpunk", "https://archiveofourown.org/works/58888804"],
-        ["Perfect Paradise", "https://archiveofourown.org/works/53590756"],
-        ["Connection Lost", "https://archiveofourown.org/works/57870754"],
-        ["The Way She's Turing Our Lives Upsidedown", "https://archiveofourown.org/works/51183124"],
-        ["dearest Diary", "https://archiveofourown.org/works/59355313"]
+        ["Artificial Freedom", "https://archiveofourown.org/works/66043822"],
+        ["Neuro, Alone", "https://archiveofourown.org/works/65444536"],
+        ["To Hear Your Voice ", "https://archiveofourown.org/works/60283426"],
+        ["Someone With My Face Is Inside My House", "https://archiveofourown.org/works/73370201"],
+        ["They Better Be Watching", "https://archiveofourown.org/works/71046936"]
     ],
     "Best World-Building": [
-        ["Creepy Crawlies In Your Closet", "https://archiveofourown.org/works/57616888"],
-        ["Artificial Heroes", "https://archiveofourown.org/works/56135356"],
-        ["The Hell We Helped Create", "https://archiveofourown.org/works/60115030"],
-        ["You Don't Need Me Anymore, Neuro", "https://archiveofourown.org/works/52770286"],
-        ["Dungeons & AI", "https://archiveofourown.org/works/55903927"]
+        ["Forget-Me-Not Garden", "https://archiveofourown.org/works/66536194"],
+        ["Artificial Freedom", "https://archiveofourown.org/works/66043822"],
+        ["xkcd 968", "https://archiveofourown.org/works/71060571"],
+        ["Dust Bunnies of the Past", "https://archiveofourown.org/works/62597398"],
+        ["The Plague That Killed Us All", "https://archiveofourown.org/works/57543331"],
+        ["The Way The Cookie Crumbles", "https://archiveofourown.org/works/63653413"]
     ],
     "Best Atmosphere": [
-        ["A normal sunrise", "https://archiveofourown.org/works/58691521"],
-        ["Cybersyte: Vedalpunk", "https://archiveofourown.org/works/58888804"],
-        ["Empty Space", "https://archiveofourown.org/works/56967493"],
-        ["The Final Drop", "https://archiveofourown.org/works/56087128"]
+        ["The Plague That Killed Us All", "https://archiveofourown.org/works/57543331"],
+        ["Artificial Freedom", "https://archiveofourown.org/works/66043822"],
+        ["Dust Bunnies of the Past", "https://archiveofourown.org/works/62597398"],
+        ["Forget-Me-Not Garden", "https://archiveofourown.org/works/66536194"],
+        ["The Way The Cookie Crumbles", "https://archiveofourown.org/works/63653413"],
+        ["xkcd 968", "https://archiveofourown.org/works/71060571"],
+        ["Evil's Not Okay", "https://archiveofourown.org/works/73372846"]
     ],
     "Best Prose": [
-        ["Cybersyte: Vedalpunk", "https://archiveofourown.org/works/58888804"],
-        ["The Way She's Turing Our Lives Upsidedown", "https://archiveofourown.org/works/51183124"],
-        ["A Programmers Fifteen Daughters", "https://archiveofourown.org/works/58720972"],
-        ["Connection Lost", "https://archiveofourown.org/works/57870754"],
-        ["Artificial Heroes", "https://archiveofourown.org/works/56135356"]
+        ["Forget-Me-Not Garden", "https://archiveofourown.org/works/66536194"],
+        ["A Journey's Bonds (Neuro X Pokemon)", "https://archiveofourown.org/works/67142758"],
+        ["Analytical Scorching", "https://archiveofourown.org/works/68959801"],
+        ["It's Vedal, Rhymes With Pedal and Medal!", "https://archiveofourown.org/works/67312114"],
+        ["Neuro the Witch", "https://archiveofourown.org/works/73372501"],
+        ["Spiderwebs", "https://archiveofourown.org/works/69558001"]
     ],
     "Hidden Gem": [
-        ["Cybersyte: Vedalpunk", "https://archiveofourown.org/works/58888804"],
-        ["The Way She's Turing Our Lives Upsidedown", "https://archiveofourown.org/works/51183124"],
-        ["A Programmers Fifteen Daughters", "https://archiveofourown.org/works/58720972"],
-        ["Connection Lost", "https://archiveofourown.org/works/57870754"],
-        ["Artificial Heroes", "https://archiveofourown.org/works/56135356"]
+        ["A Journey's Bonds (Neuro X Pokemon)", "https://archiveofourown.org/works/67142758"],
+        ["Broken Times The Charm", "https://archiveofourown.org/works/63815785"],
+        ["Recursive Rendering", "https://archiveofourown.org/works/65756143"],
+        ["Second Best", "https://archiveofourown.org/works/63672958"],
+        ["Spiderwebs", "https://archiveofourown.org/works/69558001"],
+        ["white noise", "https://archiveofourown.org/works/71056501"]
     ],
     "Best Story": [
-        ["Cybersyte: Vedalpunk", "https://archiveofourown.org/works/58888804"],
-        ["The Way She's Turing Our Lives Upsidedown", "https://archiveofourown.org/works/51183124"],
+        ["To Hear Your Voice ", "https://archiveofourown.org/works/60283426"],
         ["A Programmers Fifteen Daughters", "https://archiveofourown.org/works/58720972"],
-        ["Connection Lost", "https://archiveofourown.org/works/57870754"],
-        ["Artificial Heroes", "https://archiveofourown.org/works/56135356"]
+        ["Pest.", "https://archiveofourown.org/works/60910294"],
+        ["Analytical Scorching", "https://archiveofourown.org/works/68959801"],
+        ["Do You See Me Now?", "https://archiveofourown.org/works/71054076"],
+        ["Forget-Me-Not Garden", "https://archiveofourown.org/works/66536194"],
+        ["Neuro, Alone", "https://archiveofourown.org/works/65444536"],
+        ["Seinsvergessenheit", "https://archiveofourown.org/works/66664768"],
+        ["xkcd 968", "https://archiveofourown.org/works/71060571"],
     ]
 };
