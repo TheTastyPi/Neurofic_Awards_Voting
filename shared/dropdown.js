@@ -1,6 +1,6 @@
 const dropdown = document.getElementsByClassName("dropdown")[0];
 const startYear = 2024;
-const yearsElapsed = 1;
+const yearsElapsed = 2;
 
 function initDropdownContent() {
     const base = "/Neurofic_Awards_Voting/";
